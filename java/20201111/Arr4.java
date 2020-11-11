@@ -5,7 +5,7 @@ public class Arr4{
 		String[] strs = new String[10];
 		for(int i=0; i<nums.length; i++){
 			int n = new Random().nextInt(10);
-			//nums[i] = n;
+			nums[i] = n;
 			/*
 			if(nums[i]%2==0){
 				strs[i]="偶数";
