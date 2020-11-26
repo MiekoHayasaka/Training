@@ -5,30 +5,31 @@ public class Main{
 		System.out.print("何人？>");
 		int num = new Scanner(System.in).nextInt();
 		char[] players = createAlphArr('A',num);
-		int[] sums=new int[players.lenght];
+		int[] sums=new int[players.length];
 		System.out.print("何回振る？>");
 		int count = new Scanner(System.in).nextInt();
 		for(int i=0;i<players.length;i++){
-			int[] diceArr= createDiceArr[count];
+			int[] diceArr= createDiceArr(count);
 			for(int n:diceArr){
 				sums[i] += n;
-		}
-		System.out.printf("%sさん:%s合計:%d%n",players[i],Arrays.toStirng(diceArr),sums[i]);
-	}
-	//結果判定
-	if(isSame(sums)){
-		System.out.println("引き分け");
-	}else{
-		int maxNum=maxNum(sums);
-		String str="";
-		for(int i=0;i<sums.length;i++){
-			if(sums[i]==maxNum){
-				str+=players[i]+"さん、";
 			}
+			System.out.printf("%sさん:%s合計:%d%n",players[i],Arrays.toString(diceArr),sums[i]);
 		}
+		//結果判定
+		if(isSame(sums)){
+			System.out.println("引き分け");
+		}else{
+			int maxNum=maxNum(sums);
+			String str="";
+			for(int i=0;i<sums.length;i++){
+				if(sums[i]==maxNum){
+					str+=players[i]+"さん、";
+				}
+			}
 		//最後の、を削除する処理
 		str=str.substring(0,str.length()-1);
 		System.out.println(str+"の勝ち");
+		}
 	}
 
 	static int[] createDiceArr(int count){
@@ -40,7 +41,7 @@ public class Main{
 	}
 	static char[] createAlphArr(char first,int num){
 		char[] alphArr=new char[num];
-		for(int i=0;i<alphArr.lenght;i++){
+		for(int i=0;i<alphArr.length;i++){
 			alphArr[i]=(char)(first+i);
 		}
 		return alphArr;
