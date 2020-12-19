@@ -1,0 +1,74 @@
+#以下のデータベースを作成せよ
+
+CREATE DATABASE product_db
+DEFAULT CHARACTER SET utf8
+
+#以下の3つのテーブルを作成せし、初期データを挿入せよ
+
+##category
+CREATE TABLE category(
+  id int PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(250) NOT NULL,
+	brand_id int
+);
+
+INSERT INTO category(name)
+	VALUES('鉛筆・色鉛筆'),
+	VALUES('ボールペン'),
+	VALUES('シャープペンシル'),
+	VALUES('マーキングペン'),
+	VALUES('消しゴム');
+	VALUES('修正テープ');
+
+
+##brand
+CREATE TABLE brand(
+  id int PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(250) NOT NULL,
+	category_id int
+);
+
+##products
+CREATE TABLE products (
+  id int PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(250) NOT NULL,
+	price int NOT NULL,
+	category_id int NOT NULL,
+);
+
+INSERT INTO products(name,price,category_id)
+	VALUES('MONO',1320,01,01),
+	VALUES('ippo! かきかたえんぴつ',660,01),
+	VALUES('BiZNO',110,02),
+	VALUES('REPORTER',385,02),
+	VALUES('Zoom L105',1980,02),
+	VALUES('Zoom 505',2200,02),
+	VALUES('モノグラフ',385,03),
+	VALUES('プレイカラーK',110,04),
+	VALUES('プレイカラードット',176,04),
+	VALUES('蛍coat ',110,04),
+	VALUES('モノツインE ',165,04),
+
+
+##stores
+CREATE TABLE stores (
+  id int PRIMARY KEY AUTO_INCREMENT,
+	name int NOT NULL,
+	unit_price int NOT NULL,
+
+
+INSERT INTO `cds` (`id`, `title`, `cat_id`, `price`)
+VALUES
+(1, 'PLEASE PLEASE ME', 1, 2800),
+(2, 'With the Beatles', 1, 2800),
+(3, 'A Hard Days Night', 1, 2800),
+(4, '17歳の地図', 2, 3200),
+(5, '回帰線', 2, 3200),
+(6, '壊れた扉から', 2, 3200),
+(7, '北の大地', 3, 3600),
+(8, '目蒲線物語', NULL, 1200);
+
+以下の問に答えよ(20問)
+cdsに以下のデータを挿入せよ (Help,1,2800)
+
+tetetwete
