@@ -1,5 +1,6 @@
 ●lesson_appデータベースを文字コードUTF-8で作成する。
-
+CREATE DATABASE lesson_app
+DEFAULT CHARACTER SET utf8;
 
 ●lesson_appにbooksテーブルを作成する。カラム構成は以下
 id 整数　主キー　自動連番
@@ -7,6 +8,13 @@ category 可変長文字列(30) デフォルト値 未分類
 title 可変長文字列(255) NOTNULL制約
 price 整数
 updated 日付
+CREATE TABLE books(
+id INT PRIMARY KEY AUTO_INCREMENT,
+category VARCHAR(30) DEFAULT '未分類',
+title VARCHAR(255) NOT NULL,
+price INT,
+updated DATE
+);
 
 ●booksテーブルに以下のデータを挿入する。
 INSERT INTO books VALUES

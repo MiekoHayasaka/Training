@@ -9,21 +9,20 @@ public class BingoGame{
 		int age = s.nextInt();
 		Bingo b = new Bingo(name,age,coin);
 		if(b.ageCheck()){
-			while(coin > 0){
+			while(b.coin > 0){
 				System.out.print("BET枚数を入力。0で終了 1-100>");
 				int bet = s.nextInt();
 				if(bet == 0){
 					System.out.println("Game Over");
 					return;
+				}else if(bet > 100){
+					System.out.println("BETは1枚～100枚までです");
 				}else{
 					b.play(bet);
-					if(coin == 0){
-						System.out.println("コインがなくなりました");
-						System.out.println("Game Over");
-						return;
-					}
 				}
 			}
+			System.out.println("コインがなくなりました");
+			System.out.println("Game Over");
 			return;
 		}
 	}

@@ -2,10 +2,11 @@ import my.util.*;
 import java.util.*;
 public class Main{
 	public static void main(String[] args){
+		final int MIN=-10,MAX=10;
 		System.out.print("配列の要素数を入力してください>");
 		int num= new Scanner(System.in).nextInt();
 		int[] arr= new int[num];
-		arr = Common.arrRandomRange(-10,10,num);
+		arr = Common.arrRandomRange(Min,Max,num);
 		System.out.println("配列を生成しました。");
 		System.out.println(Arrays.toString(arr));
 		while(true){
@@ -23,12 +24,9 @@ public class Main{
 					Common.arrSort(arr,true);
 					System.out.println(Arrays.toString(arr));
 					break;
-				case 4:
-					System.out.println("アプリケーションを終了します。");
-					break;
-			}
-			if(pr == 4){
-				break;
+				default:
+					System.out.println("アプリケーションを終了します");
+					return;
 			}
 		}
 	}
